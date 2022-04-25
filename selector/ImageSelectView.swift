@@ -16,7 +16,7 @@ struct ImageSelectView: View {
         image
             .resizable()
             .scaledToFit()
-            .frame(width: 1280, height: 720, alignment: .center)
+            .frame(width: 640, height: 360, alignment: .center)
             .clipShape(Rectangle())
             .gesture(DragGesture()
                         .onChanged({ value in

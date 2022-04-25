@@ -12,22 +12,30 @@ struct ContentView: View {
     @State var images = [Image]()
     @State private var dragOver = false
     @State var index: Int = 0
+    @State var finalResults = false
     var body: some View {
         VStack {
         if images.isEmpty {
-            VStack {
-                Text("Перетащите изображения сюда")
-                    .fixedSize()
-                    .padding()
-            }.frame(width: 300, height: 300, alignment: .center)
-                .contentShape(Rectangle())
+            if finalResults {
+                ResultsView(rects: rects)
+            } else {
+                VStack {
+                    Text("Перетащите изображения сюда")
+                        .fixedSize()
+                        .padding()
+                }.frame(width: 300, height: 300, alignment: .center)
+                    .contentShape(Rectangle())
+            }
         } else {
             ImageSelectView(image: images[index], id: index, rootRects: $rects)
                 .id(index)
                 .onChange(of: rects.count, perform: { _ in
                     if images.count - 1 == index {
-                        images = []
-                        index = 0
+                        withAnimation(.spring()) {
+                            images = []
+                            index = 0
+                            finalResults = true
+                        }
                     } else {
                         index += 1
                     }
@@ -35,13 +43,12 @@ struct ContentView: View {
         }
     }
         .onDrop(of: ["public.file-url"], isTargeted: $dragOver) { providers -> Bool in
+            finalResults = false
             for provider in providers {
                 provider.loadDataRepresentation(forTypeIdentifier: "public.file-url", completionHandler: { (data, error) in
                     if let data = data, let path = NSString(data: data, encoding: 4), let url = URL(string: path as String) {
                         let image = NSImage(contentsOf: url)
-                        DispatchQueue.main.async {
-                            images.append(Image(nsImage: image!))
-                        }
+                        images.append(Image(nsImage: image!))
                     }
                 })
             }

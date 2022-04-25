@@ -15,6 +15,7 @@
 		041C635328170F770037047C /* selectorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041C635228170F770037047C /* selectorUITests.swift */; };
 		041C635528170F770037047C /* selectorUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041C635428170F770037047C /* selectorUITestsLaunchTests.swift */; };
 		041C636228170FC40037047C /* ImageSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041C636128170FC40037047C /* ImageSelectView.swift */; };
+		041C636428172FB40037047C /* ResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041C636328172FB40037047C /* ResultsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		041C635228170F770037047C /* selectorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = selectorUITests.swift; sourceTree = "<group>"; };
 		041C635428170F770037047C /* selectorUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = selectorUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		041C636128170FC40037047C /* ImageSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectView.swift; sourceTree = "<group>"; };
+		041C636328172FB40037047C /* ResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				041C633628170F760037047C /* selectorApp.swift */,
 				041C633828170F760037047C /* ContentView.swift */,
+				041C636328172FB40037047C /* ResultsView.swift */,
 				041C636128170FC40037047C /* ImageSelectView.swift */,
 				041C633A28170F770037047C /* Assets.xcassets */,
 				041C633F28170F770037047C /* selector.entitlements */,
@@ -263,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				041C633928170F760037047C /* ContentView.swift in Sources */,
+				041C636428172FB40037047C /* ResultsView.swift in Sources */,
 				041C636228170FC40037047C /* ImageSelectView.swift in Sources */,
 				041C633728170F760037047C /* selectorApp.swift in Sources */,
 			);
